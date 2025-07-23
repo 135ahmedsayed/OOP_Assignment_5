@@ -1,6 +1,6 @@
 ﻿namespace OOP_Assignment_05;
 #region FirstProject
-public class Point3D
+public class Point3D : IComparable<Point3D> , ICloneable
 {
     #region FirstProject(1,2)
     public int p1 { get; set; }
@@ -50,6 +50,29 @@ public class Point3D
             return false;
         }
         return true; // or throw an exception
+    }
+    #endregion
+
+    #region FirstProject(5,6)
+    public int CompareTo(Point3D? other)
+    {
+        if (other is null)
+            return 1; // null is considered less than any instance
+        if (this.p1.CompareTo(other.p1) == 1)
+            return 1; // this instance is greater than other
+        if (this.p1.CompareTo(other.p1) == 0)
+            return this.p2.CompareTo(other.p2); // if p1 is equal, compare p2
+        return -1;
+    }
+
+    public object Clone()
+    {
+        return new Point3D
+                (
+                    this.p1,
+                    this.p2,
+                    this.p3
+                );
     }
     #endregion
 }
