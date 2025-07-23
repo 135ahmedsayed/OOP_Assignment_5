@@ -77,3 +77,35 @@ public class Point3D : IComparable<Point3D> , ICloneable
     #endregion
 }
 #endregion
+#region SecondProject
+public static class Math
+{
+    public static int x;
+    public static int y;
+    static Math()
+    {
+        Console.WriteLine("Please Enter x and y values:");
+        x = int.Parse(Console.ReadLine()!);
+        y = int.Parse(Console.ReadLine()!);
+    }
+    public static int Add()
+    {
+        return x + y;
+    }
+    public static int Subtract()
+    {
+        return x - y;
+    }
+    public static int Multiply()
+    {
+        return x * y;
+    }
+    public static int Divide()
+    {
+        if (y == 0)
+            throw new DivideByZeroException("Cannot divide by zero.");
+        return x / y;
+    }
+}
+
+#endregion

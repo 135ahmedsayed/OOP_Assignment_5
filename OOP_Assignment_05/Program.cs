@@ -45,6 +45,12 @@
             #endregion
             #endregion
 
+            #region SecondProject
+            Console.WriteLine("Add = " + Math.Add());
+            Console.WriteLine("Sub = " + Math.Subtract());
+            Console.WriteLine("Mult = " + Math.Multiply());
+            Console.WriteLine("Div = " + Math.Divide());
+            #endregion
             Console.ReadKey();
         }
     }
