@@ -23,5 +23,34 @@ public class Point3D
         return $"Point Coordinates: ({p1}, {p2}, {p3})";
     }
     #endregion
+
+    #region FirstProject(3,4)
+    // Create ReadPoint From User
+    public static Point3D ReadPoint(string str)
+    {
+        Console.WriteLine($"Please Enter {str}");
+        int p1 = int.Parse(Console.ReadLine()!);
+        int p2 = int.Parse(Console.ReadLine()!);
+        int p3 = int.Parse(Console.ReadLine()!);
+        return new Point3D(p1, p2, p3);
+    }
+    // Override Operator ==
+    public static bool operator ==(Point3D p1, Point3D p2)
+    {
+        if (p1.p1 == p2.p1 && p1.p2 == p2.p2 && p1.p3 == p2.p3)
+        {
+            return true;
+        }
+        return false; // or throw an exception
+    }
+    public static bool operator !=(Point3D p1, Point3D p2)
+    {
+        if (p1.p1 == p2.p1 && p1.p2 == p2.p2 && p1.p3 == p2.p3)
+        {
+            return false;
+        }
+        return true; // or throw an exception
+    }
+    #endregion
 }
 #endregion
